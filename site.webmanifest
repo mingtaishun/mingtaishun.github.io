@@ -13,6 +13,12 @@
   "categories": ["business", "productivity", "shopping"],
   "icons": [
     {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
       "src": "/assets/favicon-32.png",
       "sizes": "32x32",
       "type": "image/png",

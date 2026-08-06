@@ -1,19 +1,23 @@
 // MTSLONG 站点 Service Worker
-// 策略：precache 核心静态资源 + runtime cache（cache-first，命中回退；网络回填）
-const CACHE = "mtslong-v1";
+// 策略：precache 核心静态资源 + runtime cache（cache-first 命中；网络回填；离线 fallback 到 index.html）
+const CACHE = "mtslong-v2";
 const PRECACHE = [
-  "/",
-  "/index.html",
-  "/styles.css",
-  "/app.js",
-  "/site.webmanifest",
-  "/assets/favicon-32.png",
-  "/assets/favicon-48.png",
-  "/assets/icon-192.png",
-  "/assets/icon-512.png",
-  "/assets/maskable-icon-512.png",
-  "/assets/apple-touch-icon.png",
-  "/assets/mtslong-hero.png",
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./site.webmanifest",
+  "./assets/favicon-master.png",
+  "./assets/favicon.svg",
+  "./assets/favicon-16.png",
+  "./assets/favicon-32.png",
+  "./assets/favicon-48.png",
+  "./assets/favicon-64.png",
+  "./assets/icon-192.png",
+  "./assets/icon-512.png",
+  "./assets/apple-touch-icon.png",
+  "./assets/maskable-icon-512.png",
+  "./assets/mtslong-hero.png",
 ];
 
 self.addEventListener("install", (e) => {
@@ -39,7 +43,7 @@ self.addEventListener("fetch", (e) => {
   e.respondWith(
     caches.match(req).then((hit) => {
       if (hit) {
-        // 后台回填（stale-while-revalidate 风格，但优先缓存）
+        // 后台回填（stale-while-revalidate 风格）
         fetch(req).then((res) => {
           if (res && res.ok) {
             const copy = res.clone();
@@ -54,7 +58,7 @@ self.addEventListener("fetch", (e) => {
           caches.open(CACHE).then((c) => c.put(req, copy));
         }
         return res;
-      }).catch(() => caches.match("/index.html"));
+      }).catch(() => caches.match("./index.html"));
     })
   );
 });
