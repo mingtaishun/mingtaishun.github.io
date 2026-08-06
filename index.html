@@ -7,11 +7,24 @@
       name="description"
       content="铭泰顺 MTSLONG 硬质合金切削刀具品牌官网视觉稿——立铣刀、硬质合金刀片与工况选型支持。"
     />
-    <meta name="theme-color" content="#111516" />
-    <link rel="icon" href="data:," />
+    <meta name="theme-color" content="#111515" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="./assets/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png" />
+    <link rel="mask-icon" href="./assets/favicon-48.png" color="#111515" />
+    <link rel="manifest" href="./site.webmanifest" />
     <title>MTSLONG 铭泰顺｜精准切削，连接未来制造</title>
     <script>document.documentElement.classList.add("js");</script>
     <link rel="stylesheet" href="./styles.css" />
+    <script>
+      // Register PWA service worker
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("./sw.js").catch(() => {});
+        });
+      }
+    </script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到主要内容</a>
