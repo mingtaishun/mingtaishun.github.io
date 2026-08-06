@@ -105,7 +105,7 @@ img { display: block; max-width: 100%; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(10 13 14 / 98%) 0%, rgb(10 13 14 / 92%) 37%, rgb(10 13 14 / 24%) 72%, rgb(10 13 14 / 18%) 100%), linear-gradient(0deg, rgb(10 13 14 / 75%) 0%, transparent 48%); }
 .hero-content { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .55fr); align-items: end; gap: 5rem; padding-top: clamp(5rem, 10vh, 9rem); padding-bottom: clamp(6rem, 10vh, 8rem); }
 .hero-copy { align-self: center; max-width: 850px; }
-.hero h1 { margin: 1.4rem 0 2rem; font: 800 var(--text-hero)/.78 var(--font-display); letter-spacing: -.055em; text-transform: uppercase; }
+.hero h1 { margin: 1.4rem 0 2rem; font: 800 var(--text-hero)/1 var(--font-display); letter-spacing: -.055em; text-transform: uppercase; }
 .hero-copy > p { max-width: 630px; margin: 0; color: #c2c7c5; font-size: var(--text-lg); line-height: 1.75; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin: 2.4rem 0 1.25rem; }
 .button { min-height: 52px; display: inline-flex; justify-content: center; align-items: center; gap: 2rem; border: 1px solid transparent; border-radius: 0; padding: .7rem 1.35rem; cursor: pointer; font-size: .9rem; font-weight: 800; transition: background .2s, color .2s, border-color .2s, transform .2s; }
@@ -407,7 +407,7 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); ou
   .hero-image { background-position: 69% center; opacity: .85; }
   .hero-shade { background: linear-gradient(90deg, rgb(8 11 12 / 96%) 0%, rgb(8 11 12 / 74%) 100%), linear-gradient(0deg, #080b0c 0%, transparent 62%); }
   .hero-content { padding-top: 7rem; padding-bottom: 4rem; }
-  .hero h1 { font-size: clamp(3rem, 15.2vw, 4rem); line-height: .82; }
+  .hero h1 { font-size: clamp(3rem, 15.2vw, 4rem); line-height: 1.04; }
   .hero-copy > p { font-size: .97rem; }
   .hero-actions { display: grid; }
   .hero-actions .button { width: 100%; }
