@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 980" role="img" aria-label="Image unavailable">
+  <rect width="620" height="980" fill="#f0f2f5"/>
+  <rect x="24" y="24" width="572" height="932" fill="none" stroke="#d6dde5" stroke-width="4"/>
+  <g transform="translate(310 462)">
+    <rect x="-52" y="-210" width="104" height="350" rx="50" fill="#0b2545"/>
+    <path d="M-52-150C-8-178 14-202 52-232v66C17-139-9-113-52-86zm0 105C-8-73 14-97 52-127v66C17-34-9-8-52 19z" fill="#e8720c"/>
+    <rect x="-72" y="132" width="144" height="34" fill="#93a0ae"/>
+  </g>
+  <text x="310" y="720" fill="#0b2545" font-family="Arial, sans-serif" font-size="54" font-weight="700" text-anchor="middle" letter-spacing="8">MTS</text>
+  <path d="M230 760h160" stroke="#e8720c" stroke-width="8"/>
+</svg>
