@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mingtaishun Cutting Tool Catalog 2026</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+  <!-- Portable metadata; every asset URL is relative for subdirectory hosting. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mingtaishun Cutting Tool Catalog 2026">
+  <meta property="og:description" content="Interactive Mingtaishun cutting tool catalog">
+
+  <script>
+    window.DANNY_FLIP_READER_CONFIG = {
+      textureCacheSize: 12,
+      pageSegments: 20,
+      stackCount: 30,
+      stiffness: 3,
+      flipDuration: 650,
+      renderPixelRatio: 2,
+      textureMaximumEdge: 1600,
+      textureMode: 'auto',
+      pageLinkDelay: 1000,
+      pageMode: 'single',
+      orientation: 'auto',
+      portraitRotation: 'never',
+      initialPage: 1,
+      pdfUrl: './document.pdf?v=c831204f897d'
+    };
+  </script>
+
+  <!-- Generated JPEG page list. The PDF remains available through Download. -->
+  <script src="./pages/manifest.js?v=3cbe31db4daf" type="text/javascript"></script>
+
+  <!-- Three.js is served locally; no runtime CDN or PDF parsing is needed. -->
+  <script src="./assets/three-r81.min.js?v=fb1f0c201f21" type="text/javascript"></script>
+
+  <!-- Responsive Three.js reader controller. -->
+  <script src="./assets/reader.js?v=fb1f0c201f21" type="text/javascript"></script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --reader-controls-height: 58px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: radial-gradient(circle at 78% 12%, rgba(232, 114, 12, 0.24), transparent 34%), #07192e;
+      background-size: cover;
+      overscroll-behavior: none;
+      touch-action: none;
+    }
+
+    body {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    #reader-intro {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      overflow: hidden;
+      pointer-events: none;
+      background: #fff;
+      opacity: 1;
+      transition: opacity 260ms ease-out, visibility 260ms step-end;
+    }
+
+    #reader-intro.is-ending {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #reader-intro canvas {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      image-rendering: auto;
+    }
+
+    #reader-intro-logo {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      top: 47%;
+      width: clamp(220px, 46vw, 660px);
+      max-width: calc(100vw - 48px);
+      height: auto;
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+      filter: drop-shadow(0 10px 28px rgba(23, 28, 36, 0.12));
+      animation: reader-intro-logo-fade 2300ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      will-change: opacity, transform;
+      color: #0b2545;
+      font-size: clamp(28px, 5vw, 68px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      text-align: center;
+    }
+
+    @keyframes reader-intro-logo-fade {
+      0%, 14% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      72% {
+        opacity: 0.18;
+      }
+
+      100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.975);
+      }
+    }
+
+    #reader-shell {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      overflow: hidden;
+      transform: translate(-50%, -50%) rotate(0deg);
+      transform-origin: center;
+      transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #reader-shell[data-layout="portrait-rotated"] {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] {
+      display: block;
+    }
+
+    #reader-shell[data-layout="portrait-single"] {
+      display: block;
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] #reader-controls {
+      position: absolute;
+      z-index: 30;
+      left: 50%;
+      width: max-content;
+      max-width: calc(100% - 24px);
+      min-height: 0;
+      padding: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      background: rgba(7, 12, 20, 0.72);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
+      transform: translateX(-50%);
+      transition: top 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    #reader-shell[data-layout="portrait-single"] #reader-controls {
+      position: absolute;
+      z-index: 30;
+      left: 50%;
+      bottom: max(12px, env(safe-area-inset-bottom));
+      width: max-content;
+      max-width: calc(100% - 24px);
+      min-height: 0;
+      padding: 5px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      background: rgba(7, 12, 20, 0.76);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.32);
+      transform: translateX(-50%);
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] .reader-control > .reader-icon {
+      transform: rotate(90deg);
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] #reader-page-status {
+      width: 64px;
+      height: 46px;
+      flex-direction: row;
+      gap: 4px;
+      line-height: 1;
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] .reader-page-status__number {
+      transform: rotate(90deg);
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] #reader-total-pages {
+      order: 1;
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] .reader-page-status__divider {
+      order: 2;
+      width: 1px;
+      height: 22px;
+      background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] #reader-current-page {
+      order: 3;
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] .reader-page-status__divider::before {
+      content: none;
+    }
+
+    /* The entire shell rotates in the side-toolbar layout. Keep this status
+       vertical in shell coordinates so it is still top/line/bottom when read
+       with the phone turned sideways. */
+    #reader-shell[data-layout="portrait-rotated"] #reader-page-status {
+      width: 46px;
+      height: 46px;
+      flex-direction: column;
+      gap: 3px;
+      line-height: 1;
+    }
+
+    #reader-shell[data-layout="portrait-rotated"] .reader-page-status__divider {
+      width: 22px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.72), transparent);
+    }
+
+    #reader-shell[data-layout="portrait-rotated"] .reader-page-status__divider::before {
+      content: none;
+    }
+
+    #reader-shell[data-layout="portrait-stage-rotated"] #fullscreen-wrapper {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #reader-shell[data-layout="portrait-single"] #fullscreen-wrapper {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    #reader-shell.is-transitioning {
+      will-change: transform;
+    }
+
+    #fullscreen-wrapper {
+      position: relative;
+      width: 100%;
+      min-height: 0;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    #book-stage {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+    }
+
+    #book-stage[data-layout="portrait-stage-rotated"] {
+      inset: auto;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      transform-origin: center;
+    }
+
+    #book-stage.is-ready {
+      opacity: 1;
+      transition: opacity 180ms ease-out;
+    }
+
+    #book-canvas {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      width: 100%;
+      height: 100%;
+      display: block;
+      transform: translateY(-50%);
+      cursor: grab;
+      outline: 0;
+      touch-action: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #book-canvas.is-dragging,
+    #book-canvas.is-panning {
+      cursor: grabbing;
+    }
+
+    #reader-page-links {
+      position: absolute;
+      z-index: 4;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .reader-page-link {
+      position: absolute;
+      width: clamp(38px, 4.4vw, 48px);
+      height: clamp(38px, 4.4vw, 48px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      border-radius: 50%;
+      color: #fff;
+      background: rgba(180, 83, 9, 0.9);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.34), 0 0 0 5px rgba(255, 255, 255, 0.16);
+      transform: translate(-50%, -50%);
+      pointer-events: auto;
+      -webkit-tap-highlight-color: transparent;
+      animation: reader-page-link-wiggle 1200ms ease-in-out infinite;
+    }
+
+    .reader-page-link:hover {
+      background: rgba(232, 114, 12, 0.98);
+    }
+
+    .reader-page-link:active {
+      animation: none;
+      transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    .reader-page-link:focus-visible {
+      outline: 3px solid #66ccff;
+      outline-offset: 4px;
+    }
+
+    .reader-page-link[hidden] {
+      display: none;
+    }
+
+    .reader-page-link svg {
+      width: 23px;
+      height: 23px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      pointer-events: none;
+    }
+
+    @keyframes reader-page-link-wiggle {
+      0%, 54%, 100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+      62% { transform: translate(-50%, -54%) rotate(-8deg) scale(1.06); }
+      70% { transform: translate(-50%, -56%) rotate(8deg) scale(1.08); }
+      78% { transform: translate(-50%, -54%) rotate(-5deg) scale(1.05); }
+      86% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+    }
+
+    .reader-edge-page {
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      width: 40px;
+      height: 60px;
+      margin-top: -5px;
+      padding: 0;
+      border: 0;
+      color: #000;
+      background: transparent;
+      opacity: 0.3;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .reader-edge-page:hover { opacity: 0.7; }
+    .reader-edge-page:disabled { opacity: 0; pointer-events: none; }
+    #reader-edge-prev { left: 2px; }
+    #reader-edge-next { right: 8px; }
+
+    .reader-edge-page .reader-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    #reader-controls {
+      position: relative;
+      z-index: 20;
+      min-height: var(--reader-controls-height);
+      display: grid;
+      grid-template-columns: 44px 44px 96px repeat(5, 44px);
+      align-items: center;
+      justify-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px max(10px, env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+      color: #fff;
+      background: rgba(7, 12, 20, 0.76);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(16px) saturate(135%);
+      -webkit-backdrop-filter: blur(16px) saturate(135%);
+    }
+
+    .reader-control {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 12px;
+      color: inherit;
+      background: rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+      font: inherit;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .reader-control:active {
+      transform: scale(0.94);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .reader-control:focus-visible {
+      outline: 2px solid #66ccff;
+      outline-offset: 2px;
+    }
+
+    .reader-control:disabled {
+      opacity: 0.32;
+      cursor: default;
+    }
+
+    .reader-icon {
+      width: 22px;
+      height: 22px;
+      display: block;
+      flex: none;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      pointer-events: none;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .reader-icon[hidden] {
+      display: none;
+    }
+
+    #reader-page-mode .reader-page-mode__icon--spread {
+      display: none;
+    }
+
+    #reader-page-mode[aria-pressed="true"] .reader-page-mode__icon--single {
+      display: none;
+    }
+
+    #reader-page-mode[aria-pressed="true"] .reader-page-mode__icon--spread {
+      display: block;
+    }
+
+    @media (hover: hover) {
+      .reader-control:not(:disabled):hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+    }
+
+    #reader-page-status {
+      width: 96px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      font-variant-numeric: tabular-nums;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+
+    .reader-page-status__number {
+      display: inline-flex;
+      min-width: 1.15em;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reader-page-status__divider::before {
+      content: "/";
+      color: rgba(255, 255, 255, 0.64);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    @media (max-width: 480px) {
+      #reader-controls {
+        grid-template-columns: 36px 36px 64px repeat(5, 36px);
+        gap: 3px;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
+
+      .reader-control {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+      }
+
+      .reader-control .reader-icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      #reader-page-status {
+        width: 64px;
+        gap: 4px;
+        font-size: 13px;
+      }
+
+      #reader-shell[data-layout="portrait-stage-rotated"] #reader-controls {
+        grid-template-columns: 36px 36px 64px repeat(5, 36px);
+      }
+
+      #reader-shell[data-layout="portrait-stage-rotated"] #reader-page-status {
+        width: 64px;
+      }
+
+      #reader-shell[data-layout="portrait-rotated"] #reader-controls {
+        grid-template-columns: 36px 36px 46px repeat(5, 36px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #reader-shell {
+        transition: none;
+      }
+
+      #book-canvas {
+        cursor: default;
+      }
+
+      .reader-control:active {
+        transform: none;
+      }
+
+      .reader-page-link {
+        animation: none;
+      }
+
+      #reader-intro-logo {
+        animation-duration: 520ms;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="reader-intro" role="status" aria-label="Opening document">
+    <canvas id="reader-intro-canvas" aria-hidden="true"></canvas>
+    <div id="reader-intro-logo">Mingtaishun Cutting Tool Catalog 2026</div>
+  </div>
+
+  <main id="reader-shell" data-layout="landscape">
+    <!-- Portrait layouts may rotate the canvas and controls by 90 degrees. -->
+    <section id="fullscreen-wrapper" aria-label="Interactive flipbook">
+      <div id="book-stage" data-layout="landscape">
+        <canvas id="book-canvas" tabindex="0" aria-label="3D document; click or drag to turn pages"></canvas>
+        <div id="reader-page-links" aria-live="polite"></div>
+        <button class="reader-edge-page" id="reader-edge-prev" type="button" aria-label="Previous page" disabled>
+          <svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="m15 18-6-6 6-6"></path>
+          </svg>
+        </button>
+        <button class="reader-edge-page" id="reader-edge-next" type="button" aria-label="Next page">
+          <svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="m9 18 6-6-6-6"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Lucide outline SVGs; license notices are in THIRD_PARTY_NOTICES.md. -->
+    <nav id="reader-controls" aria-label="Reader controls">
+      <a class="reader-control" id="reader-download" href="./document.pdf?v=c831204f897d" download aria-label="Download PDF">
+        <svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <path d="m7 10 5 5 5-5"></path>
+          <path d="M12 15V3"></path>
+        </svg>
+      </a>
+      <button class="reader-control" id="reader-prev" type="button" aria-label="Previous page" disabled>
+        <svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="m15 18-6-6 6-6"></path>
+        </svg>
+      </button>
+      <output id="reader-page-status" aria-live="polite" aria-label="Page 1; total loading">
+        <span class="reader-page-status__number" id="reader-current-page">1</span>
+        <span class="reader-page-status__divider" aria-hidden="true"></span>
+        <span class="reader-page-status__number" id="reader-total-pages">…</span>
+      </output>
+      <button class="reader-control" id="reader-next" type="button" aria-label="Next page">
+        <svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="m9 18 6-6-6-6"></path>
+        </svg>
+      </button>
+      <button class="reader-control" id="reader-zoom-out" type="button" aria-label="Zoom out" title="Zoom out" disabled>
+        <svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+          <path d="M8 11h6"></path>
+        </svg>
+      </button>
+      <button class="reader-control" id="reader-zoom-in" type="button" aria-label="Zoom in" title="Zoom in">
+        <svg class="reader-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+          <path d="M11 8v6"></path>
+          <path d="M8 11h6"></path>
+        </svg>
+      </button>
+      <button class="reader-control" id="reader-page-mode" type="button" aria-label="Switch to single-page view" aria-pressed="false" title="Single-page view">
+        <svg class="reader-icon reader-page-mode__icon--single" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+          <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+        </svg>
+        <svg class="reader-icon reader-page-mode__icon--spread" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2Z"></path>
+          <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7Z"></path>
+        </svg>
+      </button>
+      <button class="reader-control" id="reader-fullscreen" type="button" aria-label="Enter fullscreen">
+        <svg class="reader-icon" id="reader-enter-fullscreen-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
+          <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
+          <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
+          <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
+        </svg>
+        <svg class="reader-icon" id="reader-exit-fullscreen-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" hidden>
+          <path d="M8 3v3a2 2 0 0 1-2 2H3"></path>
+          <path d="M21 8h-3a2 2 0 0 1-2-2V3"></path>
+          <path d="M3 16h3a2 2 0 0 1 2 2v3"></path>
+          <path d="M16 21v-3a2 2 0 0 1 2-2h3"></path>
+        </svg>
+      </button>
+    </nav>
+    <p class="sr-only" id="reader-layout-status" aria-live="polite"></p>
+  </main>
+
+</body>
+</html>
